@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<script>
+			function myFunction() {
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+					document.getElementById("my-demo").innerHTML = this.responseText;
+					}
+				};
+				xhttp.open("GET", "https://unl482t23b.execute-api.us-east-1.amazonaws.com/prod/MyServerlessWebsite", true);
+				xhttp.send();
+
+			}
+
+		</script>
+	</head>
+<body>
+	<div align="center">
+		<br>
+		<br>
+		<br>
+		<br>
+		<h1>Hi <span id="my-demo">xxxxxx</span></h1>
+		<button onclick="myFunction()">Lambda trigger</button>
+		<br>
+		<img src="https://s3.amazonaws.com/mgserverless.com/Caerte_van_Oostlant_4MB.jpg">
+	</div>
+
+	</body>
+</html>
